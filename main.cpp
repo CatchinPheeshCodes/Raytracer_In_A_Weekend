@@ -7,7 +7,7 @@ int main () {
 
     std::cout << "P3\n" << img_width << ' ' << img_height << "\n255\n";
 
-    //for loop to iterate over all pixels in the image.
+    //nested for loops to iterate over all pixels in the image.
     for (int j = 0; j < img_height; ++j) {
         //Counter for remaining lines to be processed. j = current line. remaining = total lines - j.
         std::clog << "\rScanlines remaining: " << (img_height - j) << ' ' << std::flush;
