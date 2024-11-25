@@ -9,6 +9,8 @@ int main () {
 
     //for loop to iterate over all pixels in the image.
     for (int j = 0; j < img_height; ++j) {
+        //Counter for remaining lines to be processed. j = current line. remaining = total lines - j.
+        std::clog << "\rScanlines remaining: " << (img_height - j) << ' ' << std::flush;
         for(int i = 0; i < img_width; ++i) {
             auto r = double(i) / (img_width - 1);
             auto g = double(j) / (img_height - 1);
@@ -21,4 +23,5 @@ int main () {
             std::cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     } 
+    std::clog << "\rDone.                  \n";
 }
