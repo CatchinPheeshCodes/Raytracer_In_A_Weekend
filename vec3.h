@@ -3,7 +3,84 @@
 
 #include <cmath>
 #include <iostream>
+//vec3 class is for storing 3D geometric vectors and colors. 
+class vec3 {
+    public:
+        double e[3];
 
+        //initialize array.
+        vec3() : e{0, 0, 0} {}
+        vec3(double e0, double e1, double e2) : e{e0, e1, e2} {}
 
+        //functions to access x, y, and z coordinates.
+        double x() const { return e[0]; }
+        double y() const { return e[1]; }
+        double z() const { return e[2]; }
 
+        //overload unary minus operator. returns new vec3 object with all components negated.
+        vec3 operator-() const {return vec3(-e[0], -e[1], -e[2]); }
+        //overload subscript operator. returns i-th element of e array. Does not allow for modification.
+        double operator[](int i) const { return e[i]; }
+        //overloads subscript operator. Allows modification of i-th element of e array.
+        double& operator[](int i) {return e[i]; }
+
+        //overloads += operator. adds components of another vec3 object to primary object.
+        vec3& operator+=(const vec3& v) {
+            e[0] += v.e[0];
+            e[1] += v.e[1];
+            e[2] += v.e[2];
+            return *this;
+        }
+
+        //overloads *= operator.  multiplies components of vec3 object by a scalar.
+        vec3& operator*=(double t) {
+            e[0] *= t;
+            e[1] *= t;
+            e[2] *= t;
+            return *this;
+        }
+
+        //overloads /= operator. Divides components of vec3 object by a scalar.
+        vec3& operator/=(double t) {
+            return *this *= 1/t;
+        }
+
+        //Computes the actual length of the vector.
+        double length() const {
+            return std::sqrt(length_squared());
+        }
+        //Computes the squared length of the vector. 
+        double length_squared () const {
+            return e[0]*e[0] + e[1]*e[1] + e[2]*e[2];
+        }
+};
+
+//declaring point3 as an alias for vec3. Used when operating on a point.
+using point3 = vec3;
+
+//Vector utility functions.
+
+//overloads << operator. vec3 objects can be printed to an output stream.
+inline std::ostream& operator<<(std::ostream& out, const vec3& v) {
+    return out << v.e[0] << ' ' << v.e[1] << ' ' << v.e[2];
+}
+//overloads + operator. adds components of two vec3 objects together.
+inline vec3 operator+(const vec3& u, const vec3& v) {
+    return vec3(u.e[0] + v.e[0], u.e[1] + v.e[1], u.e[2] + v.e[2]);
+}
+//overloads - operator. subtracts components of first vec3 objects from second.
+inline vec3 operator-(const vec3& u, const vec3& v) {
+    return vec3(u.e[0] - v.e[0], u.e[1] - v.e[1], u.e[2]-v.e[2]);
+}
+//overloads * operator. multiplies components of two vec3 objects.
+inline vec3 operator*(const vec3& u, const vec3& v) {
+    return vec3(u.e[0]*v.e[0], u.e[1]*v.e[1], u.e[2]*v.e[2]);
+}
+//overloads * operator. multiplies components of vector by a scalar.
+inline vec3 operator*(double t, const vec3&v) {
+    return vec3(t*v.e[0], t*v.e[1], t*v.e[2]);
+}
+inline vec3 operator*(const vec3& v, double t) {
+    return t * v;
+}
 #endif
