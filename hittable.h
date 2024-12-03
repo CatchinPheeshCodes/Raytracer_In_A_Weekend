@@ -11,6 +11,13 @@ class hit_record {
         vec3 normal;
         //distance along the ray where the hit occurred.
         double t;
+        bool front_face;
+        //Sets hit record normal vector.
+        void set_face_normal(const ray& r, const vec3& outward_normal) {
+            front_face = dot(r.direction(), outward_normal) < 0;
+            //ray is inside the sphere if positive, outside of the sphere if negative.
+            normal = front_face ? outward_normal : -outward_normal;
+        }
 
 };
 
