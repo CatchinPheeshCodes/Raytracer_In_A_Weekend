@@ -10,16 +10,16 @@
 //Determines if the ray interesects our simple sphere.
 double hit_sphere(const point3& center, double radius, const ray& r) {
     vec3 orig_c = center - r.origin();
-    auto a = dot(r.direction(), r.direction());
-    auto b = -2.0 * dot(r.direction(), orig_c);
-    auto c = dot(orig_c, orig_c) - radius * radius;
-    auto discriminant = b * b - 4 * a * c;
+    auto a = r.direction().length_squared();
+    auto h = dot(r.direction(), orig_c);
+    auto c = orig_c.length_squared() - radius * radius;
+    auto discriminant = h * h - a * c;
     //each component between -1 and 1.
     if (discriminant < 0) {
         return -1.0;
     }
     else {
-        return(-b - std::sqrt(discriminant)) / (2.0 * a);
+        return(h - std::sqrt(discriminant)) / a;
     }
 }
 
