@@ -1,8 +1,7 @@
 #ifndef VEC3_H
 #define VEC3_H
 
-#include <cmath>
-#include <iostream>
+#include "rtweekend.h"
 //vec3 class is for storing 3D geometric vectors and colors. 
 class vec3 {
     public:
