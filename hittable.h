@@ -1,6 +1,7 @@
 #ifndef HITTABLE_H
 #define HITTABLE_H
-#include "ray.h"
+
+#include "rtweekend.h"
 
 //defining structure to store information about a hittable object.
 class hit_record {
