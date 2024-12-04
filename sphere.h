@@ -11,7 +11,7 @@ class sphere : public hittable {
         bool hit(const ray& r, double ray_tmin, double ray_tmax, hit_record& rec) const override {
             vec3 orig_c = center - r.origin();
             auto a = r.direction().length_squared();
-            auto h = dot(r.origin(), orig_c);
+            auto h = dot(r.direction(), orig_c);
             auto c = orig_c.length_squared() - radius * radius;
             auto discriminant = h * h - a * c;
 
