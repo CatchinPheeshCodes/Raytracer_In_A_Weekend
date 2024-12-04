@@ -1,0 +1,3 @@
+/Users/catchinpheesh/Coding with Calculus/Raytracer_In_A_Weekend/build/CMakeFiles/ImageGenerator.dir
+/Users/catchinpheesh/Coding with Calculus/Raytracer_In_A_Weekend/build/CMakeFiles/edit_cache.dir
+/Users/catchinpheesh/Coding with Calculus/Raytracer_In_A_Weekend/build/CMakeFiles/rebuild_cache.dir
