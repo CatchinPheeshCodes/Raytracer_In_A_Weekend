@@ -827,6 +827,8 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/color.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/vec3.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/ray.h \
+  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/interval.h \
+  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/camera.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable_list.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/vector \

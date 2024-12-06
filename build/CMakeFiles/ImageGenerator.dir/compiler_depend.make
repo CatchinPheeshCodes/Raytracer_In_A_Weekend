@@ -851,9 +851,11 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: /Users/catchinpheesh/Coding\ with\ Cal
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h \
+  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/camera.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/color.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable_list.h \
+  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/interval.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/ray.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/rtweekend.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/sphere.h \
@@ -862,9 +864,13 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: /Users/catchinpheesh/Coding\ with\ Cal
 
 /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/vec3.h:
 
+/Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/interval.h:
+
 /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable.h:
 
 /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/color.h:
+
+/Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/camera.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/15.0.0/include/stdint.h:
 
