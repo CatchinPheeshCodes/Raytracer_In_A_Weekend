@@ -216,6 +216,7 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/malloc/_ptrcheck.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_dev_t.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/sys/_types/_mode_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdlib \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/ios \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__fwd/ios.h \
@@ -259,7 +260,6 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__utility/move.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/new \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__exception/exception.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdlib \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/exception \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__exception/exception_ptr.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__exception/operations.h \
@@ -826,8 +826,8 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/cstdarg \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/color.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/vec3.h \
-  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/ray.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/interval.h \
+  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/ray.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/camera.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable_list.h \
