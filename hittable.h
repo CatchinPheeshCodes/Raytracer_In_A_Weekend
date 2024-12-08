@@ -3,6 +3,8 @@
 
 #include "rtweekend.h"
 
+class material;
+
 //defining structure to store information about a hittable object.
 class hit_record {
     public:
@@ -10,6 +12,8 @@ class hit_record {
         point3 p;
         //surface normal vector at the intersection point.
         vec3 normal;
+        //material pointer.
+        shared_ptr<material> mat;
         //distance along the ray where the hit occurred.
         double t;
         bool front_face;
