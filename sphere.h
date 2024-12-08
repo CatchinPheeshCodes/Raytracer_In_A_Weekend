@@ -6,10 +6,9 @@
 
 class sphere : public hittable {
     public:
-        sphere(const point3& center, double radius) : center(center), radius(std::fmax(0, radius)) {
-            //TO DO: Initialize the material pointer as 'mat'.
-        }
-
+        sphere(const point3& center, double radius, shared_ptr<material> mat)
+            : center(center), radius(std::fmax(0, radius)), mat(mat) {}
+        
         bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
             vec3 orig_c = center - r.origin();
             auto a = r.direction().length_squared();

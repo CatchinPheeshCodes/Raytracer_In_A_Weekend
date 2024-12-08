@@ -856,6 +856,7 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: /Users/catchinpheesh/Coding\ with\ Cal
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/hittable_list.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/interval.h \
+  /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/material.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/ray.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/rtweekend.h \
   /Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/sphere.h \
@@ -2563,6 +2564,8 @@ CMakeFiles/ImageGenerator.dir/main.cpp.o: /Users/catchinpheesh/Coding\ with\ Cal
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/ranges_find_if_not.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/c++/v1/__algorithm/generate_n.h:
+
+/Users/catchinpheesh/Coding\ with\ Calculus/Raytracer_In_A_Weekend/material.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX14.4.sdk/usr/include/_types/_wctrans_t.h:
 
