@@ -12,6 +12,15 @@ class camera {
         int samples_per_pixel = 10;
         int max_depth = 10;
 
+        double vfov = 90; // vertical view angle (field of view).
+
+        point3 lookfrom = point3(0, 0, 0); // point camera is looking from.
+        point3 lookat = point3(0, 0, -1);  // point camera is looking at.
+        vec3 vup = vec3(0, 1, 0);          // up direction relative to camera.
+
+        double defocus_angle = 0;
+        double focus_dist = 10;
+
         void render(const hittable& world) {
             initialize();
 
@@ -39,6 +48,9 @@ class camera {
         point3 pixel00_loc;         // Pixel 0, 0 location.
         vec3 pixel_delta_u;         // Right pixel offset.
         vec3 pixel_delta_v;         // Below pixel offset.
+        vec3 u, v, w;               // Camera frame basis vectors.
+        vec3 defocus_disk_u;
+        vec3 defocus_disk_v;
 
         void initialize() {
             img_height = int(img_width / aspect_ratio);
@@ -46,33 +58,42 @@ class camera {
 
             pixel_samples_scale = 1.0 / samples_per_pixel;
 
-            camera_center = point3(0, 0, 0);
+            camera_center = lookfrom;
 
             //viewport dimensions.
-            auto focal_length = 1.0;
-            auto viewport_height = 2.0;
+            auto theta = degrees_to_radians(vfov);
+            auto h = std::tan(theta / 2);
+            auto viewport_height = 2 * h * focus_dist;
             auto viewport_width = viewport_height * (double(img_width) / img_height);
 
+            w = unit_vector(lookfrom - lookat);
+            u = unit_vector(cross(vup, w));
+            v = cross(w, u);
+
             //calculate vectors across the horizontal and down the vertical viewport edges.
-            auto viewport_u = vec3(viewport_width, 0, 0);
-            auto viewport_v = vec3(0, -viewport_height, 0);
+            auto viewport_u = viewport_width * u;   //vector across viewport horizontal edge.
+            auto viewport_v = viewport_height * -v; //vector down viewport vertical edge.
 
             //calculate the horizontal and vertical delta vectors from pixel to pixel.
             pixel_delta_u = viewport_u / img_width;
             pixel_delta_v = viewport_v / img_height;
 
             //calculate the location of the upper left pixel p(0, 0).
-            auto viewport_upper_left = camera_center - vec3(0, 0, focal_length) - viewport_u / 2 - viewport_v / 2;
+            auto viewport_upper_left = camera_center - (focus_dist * w) - viewport_u / 2 - viewport_v / 2;
             pixel00_loc = viewport_upper_left + 0.5 * (pixel_delta_u + pixel_delta_v);
 
+            //calculate teh camera defocus disk basis vectors.
+            auto defocus_radius = focus_dist * std::tan(degrees_to_radians(defocus_angle / 2));
+            defocus_disk_u = u * defocus_radius;
+            defocus_disk_v = v * defocus_radius;
         }
-        //Constructs camera ray originating from the origin (center) and directed at randomly sampled
+        //Constructs camera ray originating from the defocus disk and directed at randomly sampled
         //point around the pixel location.
         ray get_ray(int i, int j) const {
 
             auto offset = sample_square();
             auto pixel_sample = pixel00_loc + ((i + offset.x()) * pixel_delta_u) + ((j + offset.y()) * pixel_delta_v);
-            auto ray_origin = camera_center;
+            auto ray_origin = (defocus_angle <= 0) ? camera_center : defocus_disk_sample();
             auto ray_direction = pixel_sample - ray_origin;
 
             return ray(ray_origin, ray_direction);
@@ -80,6 +101,11 @@ class camera {
         //Returns the vector to a random point in the [-.5, -.5] - [.5, .5] unit square.
         vec3 sample_square() const {
             return vec3(random_double() - 0.5, random_double() - 0.5, 0);
+        }
+        point3 defocus_disk_sample() const {
+            //Returns a random point in the camera defocus disk.
+            auto p = random_in_unit_disk();
+            return camera_center + (p[0] * defocus_disk_u) + (p[1] * defocus_disk_v);
         }
         color ray_color(const ray& r, int depth, const hittable& world) const {
             if(depth <= 0) {
